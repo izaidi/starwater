@@ -1,0 +1,242 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #180f58;
+  /*background: linear-gradient(45deg, #4a1363 0%,#3457ba 100%);*/
+  background: linear-gradient(45deg, #180f58 0%,#3a0848 100%);
+  height: 100%;
+  font-family: 'Comfortaa', sans-serif;
+}
+.ui-draggable-handle{-ms-touch-action:none;touch-action:none}
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #180f58 0%,#3a0848 100%);
+}
+.dummy {
+  display: none !important;
+}
+.hanzi {
+  font-family: 'Noto Sans SC', sans-serif; 
+  font-weight: 100;
+}
+.h-yellow {
+  color: #fff261;
+}
+.h-aqua {
+  color: #61fffd;
+}
+.h-pink {
+  color: #ffa5fe;
+}
+.title {
+  font-size: 50px;
+  z-index: 103;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
+.title-text {
+  font-family: 'Major Mono Display', monospace;
+  display: block;
+  background: linear-gradient(to right, #45fdff 0%, #fff583 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.title .hanzi {
+  display: inline-block;
+  background: linear-gradient(to right, #ffb745 0%, #ff83af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro-text {
+  position: absolute;
+  bottom: 6%;
+  left: 6%;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  text-shadow: 0px 0px 4px #000;
+}
+.intro-text-segment {
+  opacity: 0;
+  margin-bottom: 20px;
+}
+.button {
+  border: 1px solid #863ed7;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 104;
+  opacity: 0.9;
+}
+.button.medium {
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+}
+.button.large {
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+}
+.button.large .button-inner {
+  top: 5px;
+  left: 5px;
+  height: 50px;
+  width: 230px;
+  font-size: 30px;
+  line-height: 50px;
+  border-radius: 25px;
+}
+.button.medium .button-inner {
+  top: 4px;
+  left: 4px;
+  height: 32px;
+  width: 152px;
+  font-size: 18px;
+  line-height: 32px;
+  border-radius: 16px;
+}
+.button:hover {
+  opacity: 1 !important;
+  animation: none;
+  cursor: pointer;
+  border: 1px solid white;
+}
+.button-inner {
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #7e2cb3 0%, #51b0b9 100%);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 100;
+  letter-spacing: 0.05em;
+}
+.start-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 104;
+}
+.pulsar {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #807a8c;
+  border-radius: 50%;
+  z-index: 100;
+  top: 200px;
+  left: 500px;
+  position: fixed;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+}
+.pulsar-core {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  background: #807a8c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.pulsar-core.alive {
+  background: #ffef33;
+  opacity: 0.5;
+}
+.pulsar-heart {
+  position: relative;
+  height: 0;
+  width: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgb(255,239,51);
+  background: radial-gradient(circle, rgba(255,239,51,1) 0%, rgba(255,183,69,1) 100%);
+}
+.pulsar-wave {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #ffef33;
+  z-index: 99;
+}
+.interstitial {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffef33;
+  text-align: center;
+  display: none;
+  z-index: 110;
+}
+.replenished-text {
+  font-size: 50px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0030ff;
+  text-align: center;
+  font-family: 'Major Mono Display', monospace;
+  display: none;
+}
+.attractor {
+  display: inline-block;
+  position: relative;
+  top: 30px;
+  width: 60px;
+  height: 60px;
+  transform: rotate(45deg);
+  text-align: center;
+  border: 1px solid #863ed7;
+  box-sizing: border-box;
+  z-index: 100;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.attractor.inactive:hover {
+  opacity: 1;
+}
+.attractor-core {
+  position: relative;
+  top: 14px;
+  left: 14px;
+  width: 30px;
+  height: 30px;
+  background: #533492;
+  background: linear-gradient(-45deg, #8852d6 0%, #533492 100%);
+}
+.attractor:not(.inactive) .attractor-core {
+  animation-name: spin;
+  animation-duration: 6000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background: rgb(219,111,255);
+  background: linear-gradient(-45deg, rgba(219,111,255,1) 0%, rgba(255,183,69,1) 100%);
+}
+.pulse {
+  animation: pulse 2500ms infinite ease-in-out;
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+@keyframes pulse {
+    0% { opacity: 0.9; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.9; }
+}

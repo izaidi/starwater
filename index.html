@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>:: starwater ::</title>
+  <meta charset="utf-8"> 
+
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700|Major+Mono+Display|Noto+Sans+SC:100,300,400&amp;subset=chinese-simplified" rel="stylesheet">
+  <link rel="stylesheet" href="style/main.css">
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+    crossorigin="anonymous"></script>
+  <script src="js/vendor/jquery-ui.min.js"></script>
+  <script src="js/vendor/howler.min.js"></script>
+  <script src="js/vendor/SeamlessLoop.js"></script>
+  <script src="js/vendor/lodash.js"></script>
+  <script src="js/vendor/underscore.js"></script>
+  <script src="js/vendor/Events.js"></script>
+
+  <script src="js/System.js"></script>
+  <script src="js/Attractor.js"></script>
+  <script src="js/Pulsar.js"></script>
+  <script src="js/Music.js"></script>
+  <script src="js/Utils.js"></script>
+  <script src="js/Intro.js"></script>
+
+  <script src="js/vendor/require.js" data-main="js/main"></script>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div class="attractor dummy item inactive">
+    <div class="attractor-core"></div>
+  </div>
+  <div class="pulsar dummy item">
+    <div class="pulsar-core">
+      <div class="pulsar-heart"></div>
+    </div>
+  </div>
+  <div class="interstitial">
+    <div class="replenished-text">
+      replenished
+      <div class="hanzi">成功</div>
+    </div>
+  </div>
+  <div class="title">
+    <div class="title-text">stArWAter</div>
+    <div class="hanzi">星水</div>
+  </div>
+  <div class="intro">
+    <div class="intro-text">
+      <div class="intro-text-segment" data-section="pulsars" data-duration="6500">
+        Brilliant <span class="h-yellow">pulsars</span> used to light up the galaxy.
+      </div>
+      <div class="intro-text-segment" data-section="darkness" data-duration="4000">
+        One by one, they’ve gone out.
+      </div>
+      <div class="intro-text-segment" data-section="starwater" data-duration="10000">
+        <span class="h-aqua">Starwater</span> can bring them back to life.
+      </div>
+      <div class="intro-text-segment" data-section="attractors" data-duration="5000">
+        <span class="h-pink">Attractors</span> are used to guide the stream.
+      </div>
+      <div class="intro-text-segment" data-section="revive" data-duration="5000">
+        It’s up to you to revive the stars.
+      </div>
+    </div>
+  </div>
+  <div class="button dummy">
+    <div class="button-inner">
+    </div>
+  </div>
+</body>
+</html>
