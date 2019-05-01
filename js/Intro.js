@@ -36,7 +36,7 @@ var Intro = {
       opacity: 0.6
     });
     skipButton.addClass('skip-intro');
-    skipButton.fadeIn(500);
+    skipButton.delay(1000).fadeIn(500);
     skipButton.click(function() {
       self.skip();
     });
