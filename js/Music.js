@@ -78,6 +78,7 @@ var Music = {
   playTriumph: function() {
     var self = this;
     self.fadeLoopOut();
+    self.triumph.volume(0);
     self.triumph.play();
     self.playing = true;
     self.triumph.fade(0, 0.5, 1500);

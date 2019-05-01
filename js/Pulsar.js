@@ -6,6 +6,15 @@ var Pulsar = {
   pulseRadius: 1000,
   maxPulses: 2,
 
+  init: function() {
+    var self = this;
+    setInterval(function() {
+      Pulsar.objects.forEach(function(pulsar) {
+        Pulsar.update(pulsar);
+      });
+    }, 40);
+  },
+
   collision: function(particle) {
     var self = this;
     var collision = false;
@@ -15,7 +24,12 @@ var Pulsar = {
         if (particle.withinCircle(pulsarPos, self.size+4)) {
           collision = true;
           if (!pulsar.alive) { // bring to life
-            pulsar.health += 5;
+            var currentTime = +new Date();
+            if (currentTime - pulsar.lastDroplet < 10) { // rate limit
+              return false;
+            }
+            pulsar.lastDroplet = currentTime;
+            pulsar.health += 15;
             if (pulsar.health > self.fullHealth) {
               pulsar.health = self.fullHealth;
               self.checkHealthOfAll();
@@ -56,7 +70,8 @@ var Pulsar = {
       position: position,
       relativePosition: relativePosition,
       health: 0,
-      alive: false
+      alive: false,
+      lastDroplet: 0
     });
 
     var div = $('.pulsar.dummy').clone();
@@ -207,15 +222,6 @@ var Pulsar = {
         opacity: 0.6
       }, 2000);
     })
-  },
-
-  init: function() {
-    var self = this;
-    setInterval(function() {
-      Pulsar.objects.forEach(function(pulsar) {
-        Pulsar.update(pulsar);
-      });
-    }, 40);
   }
 
 }

@@ -45,7 +45,7 @@ var Intro = {
   end: function() {
     var self = this;
 
-    $('.interstitial').fadeIn(500, function() {
+    $('.interstitial').fadeIn(200, function() {
       self.running = false;
       $('*').stop(true);
       $('.pulsar-wave').remove();
